@@ -1,0 +1,29 @@
+<!-- Fatch API:
+the fatch() method starts the process of fatching a resource from a server.
+the fatch() method returns a promise that resolves to a response object. -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        fatch('data/ds.txt')
+        .then((Response)=>
+        {
+            return Response.text();
+
+        })
+        .then((data)=>
+        {
+            document.write(data);
+        })
+    </script>
+</body>
+</html>

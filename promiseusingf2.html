@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function prom(complete)
+        {
+            return new Promise(function(resolve,reject)
+        {
+            console.log("fashing data wait........")
+            setTimeout(()=>
+            {
+            if (complete)
+            {
+                resolve("worked done")
+            }
+            else
+            {
+                reject("failed")
+            }
+            },2*1000)
+        })
+        }
+        let onfulfill=(result)=>
+        {
+            console.log(result)
+        }
+        let onrejection=(error)=>
+        {
+            console.log(error)
+        }
+        prom(true).then(onfulfill);
+        prom(false).catch(onrejection);
+    </script>
+</body>
+</html>

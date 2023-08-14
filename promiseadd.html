@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(a,b)
+        {
+            return new Promise(function(resolve,reject)
+        {
+            console.log("fashing data wait........")
+            let c=a/b;
+            setTimeout(()=>
+            {
+            if (c)
+            {
+                resolve(`division is ${c}`)
+            }
+            else
+            {
+                reject("failed")
+            }
+            },2*1000)
+        })
+        }
+        let onfulfill=(result)=>
+        {
+            console.log(result)
+        }
+        let onrejection=(error)=>
+        {
+            console.log(error)
+        }
+        add(true).then(onfulfill);
+        add(false).catch(onrejection);
+    </script>
+</body>
+</body>
+</html>
